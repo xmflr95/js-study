@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM-Binding</title>
+</head>
+<body>
+  Name : <input type="text" id="nameInput" h-model="nameInput" />
+  
+  <script type="text/javascript">
+    const nameInput = document.getElementById("nameInput");
+    // const formObject = {};
+
+    // Object.defineProperty(formObject, 'name', {
+    //   get() {
+    //     return nameInput.value;
+    //   },
+    //   set(newVal) {
+    //     nameInput.value = newVal;
+    //   }
+    // });
+    
+    const globalState = {
+      myInput: '',
+      nameInput: '',
+    };
+
+    console.log(globalState);
+    
+    function select(elem) {
+      const setData = elem.getAttribute('h-model'); // : string
+      if (setData === null || setData === undefined || setData === '') {
+        throw new Error("Not defined 'h-model' attribute!");
+      }
+      // console.log(setData);
+
+      switch (elem.tagName) {
+        case 'INPUT':
+          iptVal(elem, globalState, setData, elem.value);
+          break;
+        default:
+          break;
+      }
+    }
+
+    function iptVal(elem, obj, propertyName, _value) {
+      if (!obj.hasOwnProperty(propertyName)) {
+        throw new Error("Not defined at globalState property!");
+      }
+
+      Object.defineProperty(obj, propertyName, {
+        get() {
+          return elem.value;
+        },
+        set() {
+          elem.value = _value;
+        }
+      });
+    }
+
+    // test
+    select(nameInput);
+
+    nameInput.addEventListener('keyup', (e) => {
+      console.log(globalState.nameInput);
+    });
+  </script>
+</body>
+</html>
