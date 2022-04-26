@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Extending Built-in Data Types</title>
+</head>
+<body>
+  <ul id="myList">
+  </ul>
+
+  <script>
+    class ObservableArray extends Array {
+      constructor(onPush, ...elements) {
+        super(...elements);
+
+        this.onPush = onPush;
+        this.onPush?.(this);
+
+        // if (this.onPush) {
+        //   this.onPush(this);
+        // }
+      }
+
+      push(...elements) {
+        super.push(...elements);
+        this.onPush?.(this);
+        // if (this.onPush) {
+        //   this.onPush(this);
+        // }
+      }
+    }
+
+    const onPush = array => {
+      const myList = document.getElementById("myList");
+
+      myList.innerHTML = '';
+
+      for (const name of array) {
+        myList.insertAdjacentHTML("beforeend", `<li>${name}</li>`);
+      }
+    };
+
+    // const names = new ObservableArray(console.log, "Dom", "Greg", "Abby");
+    const names = new ObservableArray(onPush, "Dom", "Greg", "Abby");
+  </script>
+</body>
+</html>
