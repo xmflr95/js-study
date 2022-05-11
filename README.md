@@ -20,4 +20,4 @@ ObservableArray class를 제작해보면서 map, filter 같은 customArray를 �
 ## 4. Kanban-Board
 > [Kanban-Board](https://github.com/xmflr95/js-study/tree/main/kanban-board)  
 >
-드래그가 되는 sticky note를 만들어봄
+드래그가 되는 sticky note를 만들어봄(no framework)

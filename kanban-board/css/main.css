@@ -17,7 +17,7 @@
 }
 
 .kanban__column:not(:last-child) {
-  margin-left: 30px;
+  margin-right: 30px;
 }
 
 .kanban__column-title {
