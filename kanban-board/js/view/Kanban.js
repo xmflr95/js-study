@@ -22,7 +22,7 @@ export default class Kanban {
         title: "In Progress"
       },
       {
-        id: 1,
+        id: 3,
         title: "Completed"
       }
     ];
