@@ -24,5 +24,10 @@ ObservableArray class를 제작해보면서 map, filter 같은 customArray를 �
 
 ## 5. Auto-Save-Input
 > [Auto-Save-Input](https://github.com/xmflr95/js-study/tree/main/auto-save-input)  
->
+> 
 서버가 있다는 가정하에 input에 변경이벤트가 감지되면 자동 저장되는 것처럼 보이도록하는 프론트 코드 + 간단한 Node Server 작성 
+
+## 5. SPA(Single-Page-App)
+> [SPA](https://github.com/xmflr95/js-study/tree/main/spa)  
+> 
+SPA를 웹 프레임워크를 사용하지 않고 바닐라 JS로 구현해봄(no framework), router 구현
