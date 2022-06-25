@@ -30,4 +30,5 @@ ObservableArray class를 제작해보면서 map, filter 같은 customArray를 �
 ## 5. SPA(Single-Page-App)
 > [SPA](https://github.com/xmflr95/js-study/tree/main/spa)  
 > 
-SPA를 웹 프레임워크를 사용하지 않고 바닐라 JS로 구현해봄(no framework), router 구현
+SPA를 웹 프레임워크를 사용하지 않고 바닐라 JS로 구현해봄(no framework), router 구현  
++6/25) SPA에서 Client Side URL Parmaeters를 어떻게 페이지에서 받는지 추가
